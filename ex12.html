@@ -1,0 +1,74 @@
+<!-- color flipper -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+  body,html{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+  }
+  #heading{
+   border: 1px solid black;
+   font-size: 40px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: rgb(228, 18, 18);
+   padding: 10px;
+   flex:0;
+  }
+  #hexval{
+   float: right;
+  }
+  #bg{
+   flex: auto;
+  }
+  #btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 50vh;
+  }
+  button{
+   color:white;
+   background-color: lightseagreen;
+   border: none;
+   padding: 10px;
+  }
+ </style>
+</head>
+<body>
+  <div id="heading">
+  Color Flipper
+  <span id="hexval">#FFFFFF</span>
+ </div>
+ <div id="bg">
+  <div id="btn">
+   <button id="b">Click me</button>
+  </div>
+ </div>
+ <script>
+  let hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+  let bg = document.getElementById('bg')
+  let btn = document.getElementById('b')
+  let hex_value = document.getElementById('hexval')
+  btn.addEventListener("click",bg_change)
+  function color(){
+  let colors = '#'
+  for(let i = 0;i < 6;i++){
+   random_hex = Math.floor(Math.random()*16)
+   colors += hex[random_hex]
+  }
+  return colors
+  }
+  function bg_change(){
+   hex_value.innerHTML = color()
+   bg.style.backgroundColor = color()
+  }
+  console.log(colors)
+ </script>
+</body>
+</html>

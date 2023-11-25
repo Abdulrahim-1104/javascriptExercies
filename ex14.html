@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <select id="dept">
+  <option value="select">select</option>
+ </select>
+<script>
+department = ['BSC CS','BSC ENGLISH','BSC CHEMISTRY','BSC TAMIL']
+department.forEach(val => {
+let opt = document.createElement('option')
+opt.textContent = val
+opt.value = val
+document.getElementById('dept').appendChild(opt)
+});
+
+</script>
+</body>
+</html>
